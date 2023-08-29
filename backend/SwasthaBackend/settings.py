@@ -78,8 +78,11 @@ WSGI_APPLICATION = 'SwasthaBackend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'djongo',
+        'NAME': 'swastha_track_db',
+        'CLIENT': {
+            'host': 'mongodb+srv://chandan:chandankumar@cluster0.dbjirxm.mongodb.net/swastha_track_db?retryWrites=true&w=majority', 
+        }
     }
 }
 

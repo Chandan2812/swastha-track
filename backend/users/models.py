@@ -13,8 +13,7 @@ class UserProfile(models.Model):
     name = models.CharField(max_length=255)
     age = models.PositiveIntegerField()
     gender = models.CharField(max_length=6, choices=GENDER_CHOICES)
-    height = models.PositiveIntegerField()  # height in centimeters
-    weight = models.PositiveIntegerField()  # weight in kilograms
+    height = models.PositiveIntegerField()  
     email = models.EmailField(unique=True)
     contact_number = models.CharField(max_length=15, blank=True, null=True)
     
