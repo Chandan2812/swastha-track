@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-7d-fd0h#64$)%x8*q2nq8@2#rq5=a4^kchur(8fffbba1@s5ii'
+SECRET_KEY = 'django-insecure-(%r6_#dfnim%tv-7sm0s$@jvp_$)61jodda4z=fgco^w*yn=qi'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,9 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
-    'users',
-    'trainers',
 ]
 
 MIDDLEWARE = [
@@ -81,7 +78,7 @@ DATABASES = {
         'ENGINE': 'djongo',
         'NAME': 'swastha_track_db',
         'CLIENT': {
-            'host': 'mongodb+srv://chandan:chandankumar@cluster0.dbjirxm.mongodb.net/swastha_track_db?retryWrites=true&w=majority', 
+            'host': 'mongodb+srv://chandan:chandankumar@cluster0.dbjirxm.mongodb.net/swastha_track_db?retryWrites=true&w=majority',
         }
     }
 }
