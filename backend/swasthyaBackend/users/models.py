@@ -1,6 +1,9 @@
 from django.db import models
-
+from bson.objectid import ObjectId
 # Create your models here.
+
+def generate_objectid():
+    return str(ObjectId())
 
 class UserProfile(models.Model):
     GENDER_CHOICES = [
@@ -8,6 +11,7 @@ class UserProfile(models.Model):
         ('Female', 'Female'),
         ('Other', 'Other'),
     ]
+    id = models.CharField(primary_key=True, default=generate_objectid, max_length=24, editable=False)
     name = models.CharField(max_length=255)
     age = models.PositiveIntegerField()
     gender = models.CharField(choices=GENDER_CHOICES, max_length=6)
@@ -18,3 +22,22 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return self.name
+
+
+
+class FitnessGoal(models.Model):
+    GOAL_CHOICES = [
+        ('weight_loss', 'Weight Loss'),
+        ('muscle_gain', 'Muscle Gain'),
+        ('endurance', 'Endurance')
+    ]
+    goal_type = models.CharField(choices=GOAL_CHOICES, max_length=50)
+    target = models.TextField()
+    timeline = models.TextField()
+
+
+class ProgressTracking(models.Model):
+    date = models.DateField()
+    weight = models.FloatField(help_text="Weight in kilograms")
+    body_measurements = models.TextField()
+    notes = models.TextField(blank=True)
