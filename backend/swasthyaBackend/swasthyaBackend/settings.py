@@ -79,12 +79,13 @@ WSGI_APPLICATION = 'swasthyaBackend.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'Fitness',
-        'CLIENT': {
-            'host': 'mongodb+srv://chandan:chandankumar@cluster0.dbjirxm.mongodb.net/Fitness?retryWrites=true&w=majority',
-        },
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "fitness",
+        "USER": "chandan",
+        "PASSWORD": "Chandan123",
+        "HOST": "127.0.0.1",
+        "PORT": "3306",
     }
 }
 

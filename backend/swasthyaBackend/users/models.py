@@ -1,9 +1,5 @@
 from django.db import models
-from bson.objectid import ObjectId
-# Create your models here.
 
-def generate_objectid():
-    return str(ObjectId())
 
 class UserProfile(models.Model):
     GENDER_CHOICES = [
@@ -11,7 +7,8 @@ class UserProfile(models.Model):
         ('Female', 'Female'),
         ('Other', 'Other'),
     ]
-    id = models.CharField(primary_key=True, default=generate_objectid, max_length=24, editable=False)
+    
+    id = models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')
     name = models.CharField(max_length=255)
     age = models.PositiveIntegerField()
     gender = models.CharField(choices=GENDER_CHOICES, max_length=6)

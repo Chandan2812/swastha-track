@@ -11,9 +11,5 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.AlterField(
-            model_name='userprofile',
-            name='id',
-            field=models.CharField(default=users.models.generate_objectid, editable=False, max_length=24, primary_key=True, serialize=False),
-        ),
+       
     ]
